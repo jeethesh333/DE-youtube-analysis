@@ -18,7 +18,7 @@ job.init(args['JOB_NAME'], args)
 ## @args: [database = "de1-pipeline-1-raw", table_name = "raw_statistics", transformation_ctx = "datasource0"]
 ## @return: datasource0
 ## @inputs: []
-predicate_pushdown = "region in ('ca','gb','us')"
+predicate_pushdown = "region in ('ca', 'gb', 'us')"
 
 datasource0 = glueContext.create_dynamic_frame.from_catalog(database = "de1-pipeline-1-raw", table_name = "raw_statistics", transformation_ctx = "datasource0", push_down_predicate = predicate_pushdown)
 
