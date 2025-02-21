@@ -14,10 +14,6 @@ glueContext = GlueContext(sc)
 spark = glueContext.spark_session
 job = Job(glueContext)
 job.init(args['JOB_NAME'], args)
-## @type: DataSource
-## @args: [database = "de1-pipeline-1-raw", table_name = "raw_statistics", transformation_ctx = "datasource0"]
-## @return: datasource0
-## @inputs: []
 predicate_pushdown = "region in ('ca', 'gb', 'us')"
 
 datasource0 = glueContext.create_dynamic_frame.from_catalog(database = "de1-pipeline-1-raw", table_name = "raw_statistics", transformation_ctx = "datasource0", push_down_predicate = predicate_pushdown)
