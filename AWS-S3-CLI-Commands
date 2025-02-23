@@ -1,4 +1,4 @@
-# To copy all JSON Reference data to the same location:
+# copy all JSON Reference data to the same location:
 aws s3 cp . s3://de1-pipeline-1/pipeline-1/raw_statistics_reference_data/ --recursive --exclude "*" --include "*.json"
 
 # To copy all data files to its own location, following Hive-style patterns:
